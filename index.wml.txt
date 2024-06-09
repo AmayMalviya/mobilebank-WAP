@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.1//EN" "http://www.wapforum.org/DTD/wml_1.1.xml">
+<wml>
+    <card id="main" title="Mobile Bank">
+        <p>
+            Welcome to Mobile Bank!<br/>
+            <a href="balance">Check Balance</a><br/>
+            <a href="transfer">Transfer Money</a>
+        </p>
+    </card>
+    <card id="balance" title="Check Balance">
+        <p>
+            <anchor>
+                Checking balance...
+                <go href="BalanceServlet" />
+            </anchor>
+        </p>
+    </card>
+    <card id="transfer" title="Transfer Money">
+        <p>
+            Enter amount: <input name="amount" size="10"/><br/>
+            <anchor>
+                Submit
+                <go href="TransferServlet" method="post">
+                    <postfield name="amount" value="$(amount)"/>
+                </go>
+            </anchor><br/>
+            <a href="#main">Back</a>
+        </p>
+    </card>
+</wml>
